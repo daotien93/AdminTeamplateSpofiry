@@ -12,6 +12,7 @@
     "@syncfusion/ej2-react-kanban": "^20.3.47",
     "@syncfusion/ej2-react-popups": "^20.3.47",
     "@syncfusion/ej2-react-richtexteditor": "^20.3.47",
+    "@syncfusion/ej2-react-schedule": "^20.3.49",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

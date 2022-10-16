@@ -18,9 +18,9 @@ const Orders = () => {
             contextMenuItems={contextMenuItems}
             editSettings={editing}
       >
-      <ColumnDirective>
+      <ColumnsDirective>
         {ordersGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
-      </ColumnDirective>
+      </ColumnsDirective>
       <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport]} />
       </GridComponent>
     </div>

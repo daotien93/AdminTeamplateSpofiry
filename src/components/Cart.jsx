@@ -4,8 +4,10 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 import { cartData } from '../data/dummy';
 import { Button } from '.';
+import { useStateContext } from '../contexts/ContentProvider';
 
 const Cart = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className='bg-half-transparent w-full fixed nav-item top-0 right-0'>
       <div className='loat-right h-screen  duration-1000 ease-in-out dark:text-gray-200 transition-all dark:bg-[#484B52] bg-white md:w-400 p-8'>
@@ -50,6 +52,15 @@ const Cart = () => {
             <p className='text-gray-500 dark:text-gray-200' >Total</p>
             <p className='font-semibold' >$890</p>
           </div>
+        </div>
+        <div className='mt-5'>
+          <Button
+            color='white'
+            bgColor={currentColor}
+            text='Place Order'
+            borderRadius='10px'
+            width='full'
+          />
         </div>
       </div>
     </div>
