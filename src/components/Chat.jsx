@@ -1,7 +1,7 @@
 import React from 'react';
 import Button  from './Button';
 import { MdOutlineCancel } from 'react-icons/md';
-import { useStateContext } from '../contexts/ContentProvider';
+import { useStateContext } from '../contexts/ContextProvider';
 import { chatData } from '../data/dummy';
 
 const Chat = () => {

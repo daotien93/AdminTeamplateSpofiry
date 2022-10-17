@@ -3,7 +3,7 @@ import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Dat
 
 import { ChartsHeader } from '../../components';
 import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from '../../data/dummy';
-import { useStateContext } from '../../contexts/ContentProvider';
+import { useStateContext } from '../../contexts/ContextProvider';
 
 
 const Area = () => {

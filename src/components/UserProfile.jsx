@@ -1,9 +1,10 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
+import { Link } from 'react-router-dom'
 
 import { Button } from '.';
 import { userProfileData } from '../data/dummy';
-import { useStateContext } from '../contexts/ContentProvider';
+import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
 
 const UserProfile = () => {
@@ -28,9 +29,15 @@ const UserProfile = () => {
           alt='user-profile'
         />
         <div>
-          <p className='font-semibold text-xl dark:text-gray-200'> Michael Roberts </p>
-          <p className='text-gray-500 text-sm dark:text-gray-400'>  Administrator   </p>
-          <p className='text-gray-500 text-sm font-semibold dark:text-gray-400'> info@shop.com </p>
+          <p className='font-semibold text-xl dark:text-gray-200'>
+            <Link to='/'>Henry Dev</Link>
+          </p>
+          <p className='text-gray-500 text-sm dark:text-gray-400'>
+            <Link to='/'>Admin</Link>
+          </p>
+          <p className='text-gray-500 text-sm font-semibold dark:text-gray-400'>
+            <Link to='/'>henrydev@gmail.com</Link>
+          </p>
         </div>
       </div>
       <div>
