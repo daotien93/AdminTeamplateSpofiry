@@ -45,6 +45,17 @@ router.get('/find/:id', async (req, res) => {
     }
 });
 
+/// Get all user
+router.get('/', async (req, res) => {
+    const query = req.query.new;
+    try {
+        const users = query ? await User.find().sort({ _id: -1}).limit(5) : await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
+
 // Get all start
 router.get('/starts', async (req, res) => {
     const date = new Date();
