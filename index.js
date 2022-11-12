@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 dotenv.config();
 const authRoute = require('./routes/auth');
+const userRoute = require('./routes/user');
 
 const DB = process.env.MONGO_URL
 
@@ -24,6 +25,8 @@ mongoose
 app.use(cors());
 app.use(express.json());
 app.use('/api/v1/auth', authRoute);
+app.use('/api/v1/user', userRoute);
+
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('Backend is running');
