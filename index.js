@@ -7,6 +7,7 @@ dotenv.config();
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/user');
 const productRoute = require('./routes/product');
+const cartRoute = require('./routes/cart');
 
 const DB = process.env.MONGO_URL
 
@@ -28,7 +29,7 @@ app.use(express.json());
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/user', userRoute);
 app.use('/api/v1/product', productRoute);
-
+app.use('/api/v1/cart', cartRoute);
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('Backend is running');
