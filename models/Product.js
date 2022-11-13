@@ -8,9 +8,9 @@ const ProductSchema = new mongoose.Schema(
         category: { type: Array, require: true},
         size: { type: Array, require: true },
         color: { type: Array, require: true },
-        price: { type: Float32Array, require: true},
+        price: { type: Number, require: true},
     },
  { timestamps: true}
 );
 
-module.exports = UserSchema.model('Product', ProductSchema);
+module.exports = mongoose.model('Product', ProductSchema);

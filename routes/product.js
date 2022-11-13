@@ -1,4 +1,4 @@
-const router = require('express').router();
+const router = require('express').Router();
 const { response } = require('express');
 const Product = require('../models/Product');
 
@@ -13,7 +13,7 @@ router.get('/:id', async(req, res, next) => {
 });
 
 // Create product
-router.get('/', async(req, res, next) => {
+router.post('/', async(req, res, next) => {
     const newProdct = new Product(req.body);
     try {
         const saveProduct = await newProdct.save();
@@ -21,4 +21,21 @@ router.get('/', async(req, res, next) => {
     } catch (error) {
         res.status(404).json(error);
     }
-})
+});
+
+// Update product
+router.put('/:id', async(req, res, next) => {
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate(
+          req.params.id,
+          {
+            $set: req.body,
+          },
+          { new: true }
+        );
+        res.status(200).json(updatedProduct);
+    } catch (error) {
+        res.status(404).json(error);
+    }
+});
+module.exports = router;
