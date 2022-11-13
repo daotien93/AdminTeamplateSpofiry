@@ -13,9 +13,28 @@ router.post('/', async (req, res, next) => {
 });
 
 // Delete a cart
-router.get('/:id', async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
     try {
         await Cart.findByIdAndDelete(req.params.id);
+        res.status(200).json('Delete success');
+    } catch (error) {
+        res.status(404).json(error);
+    }
+});
+
+// Update a cart
+router.put('/:id', async (req, res, next) => {
+    try {
+        const updateCart = await Cart.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set: req.body,
+            },
+            {
+                new: true
+            }
+        );
+        res.status(200).json(updateCart);
     } catch (error) {
         res.status(404).json(error);
     }
